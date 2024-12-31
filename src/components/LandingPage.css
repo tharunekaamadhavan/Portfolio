@@ -1,0 +1,68 @@
+.bubble-banner-section {
+    /*background-color: rgba(224, 247, 250, 0.8);  Add transparency */
+    width: 100vw; /* Make the banner full width */
+    margin-left: calc(-50vw + 50%); /* To extend the banner to both edges */
+    padding: 50px 0; /* Keep top and bottom padding but remove side padding */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is counted inside the width */
+    /*margin-top: 200px;  Adjust this value to bring the banner lower */
+  }
+  
+  
+  .bubble-banner-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+    margin-top: 100px;
+  }
+  
+  .bubble-banner-section h2 {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: white;
+  }
+  
+  /* Ensure the bubbles are still centered */
+  .bubble-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 50px;
+  }
+  
+  .bubble {
+    width: 250px;
+    position: relative;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(118, 108, 105, 0.5);
+    transition: transform 0.3s;
+    cursor: pointer;
+    
+  }
+  
+  
+  .bubble:hover {
+    transform: scale(1.1);
+  }
+  
+  .bubble-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+ 
+  .bubble-text {
+    margin-top: 10px; /* Adjusts distance between the bubble and the text */
+    font-size: 14px;
+    color: #07f5dd;
+}

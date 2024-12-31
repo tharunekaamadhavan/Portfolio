@@ -1,0 +1,61 @@
+*{
+    box-sizing:border-box;
+
+}
+.bodyy{
+    font-family:Inter,sans-serif;
+    background-image: url("/src/assets/react-half-logo.png");
+    color: white;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    padding:60px 30px;
+    background-position:right 70%;
+    background-color: rgb(36, 39, 46, 255);
+}
+.headerr{
+    margin-top:6%;
+    height: 90px;
+    background-color: rgb(33, 34, 42);
+    padding: 30px 25px;
+}
+.navv{
+    display:flex;
+    align-items: center;
+    height:100%;
+}
+.navv img{
+width:40px;
+margin-right:  7px;
+
+}
+.navv span{
+    color: #61DAFB;
+    font-size: 1.3rem;
+}
+
+.mainn h1{
+margin:0;
+font-size: 2.4rem;
+}
+.facts-list{
+margin-top: 46px;
+max-width:400px;
+margin-left: calc(-30vw + 50%);
+margin-right: calc(-40vw + 50%);
+}
+.facts-list li{
+    padding-block: 10px;
+    line-height: 19px;
+    
+}
+.facts-list li::marker{
+    color: #61DAFB;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+

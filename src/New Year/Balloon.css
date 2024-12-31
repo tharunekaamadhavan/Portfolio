@@ -1,0 +1,23 @@
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: floatUp linear infinite;
+    pointer-events: none; /* Ensures balloons don't interfere with interactions */
+  }
+  
+  @keyframes floatUp {
+    0% {
+      /* Balloons start from a random position at the bottom */
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      /* Balloons float upwards and vanish at the top */
+      transform: translateY(-100vh); /* Move up by full viewport height */
+      opacity: 0;
+    }
+  }
+  

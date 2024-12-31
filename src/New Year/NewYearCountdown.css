@@ -1,0 +1,186 @@
+
+
+.time-interval {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1.8rem;
+  color: #f8e71c;
+  text-shadow: 0 0 8px rgba(248, 231, 28, 0.7);
+}
+
+.countdown-message {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #50e3c2;
+  text-shadow: 0 0 15px rgba(80, 227, 194, 0.8);
+  animation: glow 1.5s infinite alternate;
+}
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #f8e71c, 0 0 10px #f5a623, 0 0 15px #f5a623;
+  }
+  to {
+    text-shadow: 0 0 20px #f8e71c, 0 0 25px #f5a623, 0 0 30px #f5a623;
+  }
+}
+
+.tree-container {
+  position: fixed;
+  bottom: 20px;                  /* Adjusted for better spacing */
+  right: 20px;                   /* Centered at the bottom-right */
+  width: 24%;                    
+  height: 50%;
+
+  z-index: 10;
+  border-radius: 15px;           /* More rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4));
+  overflow: hidden;              /* Ensure the model stays within bounds */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tree-container:hover {
+  transform: scale(1.05);        /* Subtle hover effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.simulation-view {
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.4));
+  border-radius: 15px;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.countdown-container {
+  text-align: center;
+  
+  margin: 5% auto;
+  padding: 10% ;
+  color: #fff;
+  background: #2a2a2a;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 100%;
+}
+
+.countdown-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.radial-timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  
+}
+
+.simulation-container {
+  margin-top: 20px;
+}
+.simulation-container h3{
+  margin-top: 5%;
+}
+
+.simulation-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2%;
+  font-size: 1rem;
+}
+
+.simulation-button:hover {
+  background-color: #0056b3;
+}
+
+
+.xmas-tree {
+  text-align: center; 
+  position: fixed;
+  bottom: 51%;                  /* Adjusted for better spacing */
+  right: 0px;   /* Center align text and tree */
+}
+
+.zoom-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Add spacing between the text and the tree */
+  color: #65c4df; /* Optional: Add a festive color */
+}
+/* Overlay to cover the background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box styling */
+.modal-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+  z-index: 1010;
+}
+
+.modal-box h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Close button */
+.close-button {
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.close-button:hover {
+  background-color: #e03e00;
+}
