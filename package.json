@@ -1,6 +1,7 @@
 {
   "name": "hello",
   "homepage": "https://tharunekaamadhavan.github.io/Portfolio/",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -11,16 +12,13 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "css-compile": "sass E:/React/hello/bootstrap-4.4.1/bootstrap-4.4.1/scss/bootstrap.scss E:/React/hello/bootstrap-4.4.1/bootstrap-4.4.1/dist/bootstrap.css",
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d dist"
+    "css-compile": "sass E:/React/hello/bootstrap-4.4.1/bootstrap-4.4.1/scss/bootstrap.scss E:/React/hello/bootstrap-4.4.1/bootstrap-4.4.1/dist/bootstrap.css"
   },
   "dependencies": {
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
     "@types/react-router-dom": "^5.3.3",
     "bootstrap": "^5.3.3",
-    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.7",
     "react-circular-progressbar": "^2.1.0",
