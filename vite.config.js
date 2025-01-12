@@ -1,8 +1,19 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:"/Portfolio/",
-})
+  build: {
+    chunkSizeWarningLimit: 1000, // Adjust if needed
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('three')) return 'three'; // Separate chunk for 'three' library
+            return 'vendor'; // All other node_modules in a 'vendor' chunk
+          }
+        },
+      },
+    },
+  },
+});

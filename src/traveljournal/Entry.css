@@ -14,6 +14,9 @@ article.journal-entry .main-image-container {
     border-radius: 5px;
     flex-shrink: 0;
     margin-right: 19px;
+    margin-left: 19px;
+    margin-top: 19px;
+    margin-bottom: 19px;
 }
 
 article.journal-entry .main-image {
@@ -53,4 +56,7 @@ article.journal-entry .main-image {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+}
+.info-container{
+    margin-top: 19px;
 }

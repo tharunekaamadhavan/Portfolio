@@ -30,7 +30,7 @@ function NewYearCountdown() {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
   };
-
+const hours=new Date().getHours();
   // Determine the next New Year's date
   const getNextNewYear = () => {
     const now = new Date();
@@ -46,7 +46,16 @@ function NewYearCountdown() {
 
     return () => clearInterval(timer);
   }, []);
-
+let timeOfDay
+if (hours<12){
+  timeOfDay="Morning"
+} else if (hours>=12 && hours<14){
+  timeOfDay="Afternoon"
+}else if (hours<21){
+  timeOfDay="Evening"
+}else{
+  timeOfDay="Night"
+}
   // Handle New Year Simulation
   const simulateNewYear = () => {
     setShowSimulation(true);
@@ -80,7 +89,7 @@ function NewYearCountdown() {
     <div className="countdown-container">
       
       <h1 className="countdown-title">🎆 Countdown to Next New Year! 🎉</h1>
-
+<h2 className="time">Good {timeOfDay}! The hour is {hours}</h2>
       {isNewYear ? (
         <h2 className="countdown-message">🎉 Happy New Year! 🎆</h2>
       ) : (

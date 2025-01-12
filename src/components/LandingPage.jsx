@@ -1,18 +1,32 @@
-import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import './LandingPage.css';
-
+import React, { Suspense, useRef } from "react";
+import "./LandingPage.css";
+const reactSvg = () => import('/src/assets/react.svg');
 const links = [
-    { link: "why-react?", image: "/src/assets/react.svg", text: "Why React?" },
-    { link: "react-facts", image: "/src/assets/react.png", text: "React Facts" },
-    { link: "vite+react", image: "/src/assets/vite+react.png", text: "Vite + React" },
-    { link: "travel-journal", image: "/src/assets/vite+react.png", text: "Travel Journal" },
-    {link:"new-year-countdown",image:"",text:"New Year Countdown!"}
+    { link: "why-react?", image: reactSvg, text: "Why React?" },
+    { link: "react-facts", image: () => import("/src/assets/react.png"), text: "React Facts" },
+    { link: "vite+react", image: () => import("/src/assets/vite+react.png"), text: "Vite + React" },
+    { link: "travel-journal", image: () => import("/src/assets/vite+react.png"), text: "Travel Journal" },
+    { link: "new-year-countdown", image: null, text: "New Year Countdown!" },
+    { link: "random-number-generator", image: () => import("/src/assets/react.svg"), text: "Random Number Generator" },
+    { link: "contact", image: null, text: "Contact" },
 ];
+
+function LazyImage({ importFunction }) {
+    const [src, setSrc] = React.useState(null);
+
+    React.useEffect(() => {
+        if (importFunction) {
+            importFunction().then((module) => setSrc(module.default));
+        }
+    }, [importFunction]);
+
+    if (!src) return <div className="image-placeholder">Loading...</div>;
+    return <img src={src} alt="Bubble" className="bubble-image" />;
+}
 
 function Landing({ onLinkClick }) {
     const bubbleRef = useRef(null);
+
     return (
         <div className="bubble-banner-section" ref={bubbleRef}>
             <h1>Welcome to my Website!</h1>
@@ -21,7 +35,11 @@ function Landing({ onLinkClick }) {
                 {links.map((link, index) => (
                     <div key={index} className="bubble-item">
                         <div className="bubble" onClick={() => onLinkClick(link.link)}>
-                            <img src={link.image} alt={link.link} className="bubble-image" />
+                            {link.image ? (
+                                <LazyImage importFunction={link.image} />
+                            ) : (
+                                <div className="no-image">No Image</div>
+                            )}
                         </div>
                         <p className="bubble-text">{link.text}</p>
                     </div>
@@ -30,5 +48,6 @@ function Landing({ onLinkClick }) {
         </div>
     );
 }
+
 
 export default Landing;
