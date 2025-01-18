@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation 
 import background from '/src/assets/background.jpg';
 function App() {
   return (
-    <Router>
+    <Router basename='Portfolio'>
       <MainApp />
     </Router>
   );

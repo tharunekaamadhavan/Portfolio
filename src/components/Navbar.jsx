@@ -1,10 +1,11 @@
 import React from "react";
 import './Navbar.css'
+import logo from '../assets/Magna.png'
 const Navbar=()=>{
     return(
     <header className="header">
         <a href="/" className="logo">
-                <img src="./src/assets/Magna.png" alt="Logo" className="logo-img" />
+                <img src={logo} alt="Logo" className="logo-img" />
             </a>
         <nav className="navbarr">
         <a href="/">Home</a>

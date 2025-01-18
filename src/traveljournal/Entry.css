@@ -60,3 +60,12 @@ article.journal-entry .main-image {
 .info-container{
     margin-top: 19px;
 }
+.info-container a {
+    color: blue; /* Set link color */
+    text-decoration: underline; /* Add underline for emphasis */
+    cursor: pointer; /* Change the cursor to a hand */
+}
+
+a:hover {
+    text-decoration: none; /* Optional: Remove underline on hover */
+}

@@ -1,12 +1,19 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import MyAwesomeNavbar from './MyAwesomeNavbar'
 import './why_react.css'
 
 function MainContent(){
+    const [reactSvg, setReactSvg] = useState(null);
+
+    useEffect(() => {
+        import('/src/assets/react.svg').then((image) => {
+            setReactSvg(image.default);
+        });
+    }, []);
     return(
     <div className="main-content">
         <header className="hheader">  
-        <img src="src/assets/react.svg" width="40px" alt="react img"/>
+        {reactSvg && <img src={reactSvg} width="40px" alt="react img" />}
         <nav>
             <ul className="nav-list">
                 <li className="nav-list-item">Pricing</li>
