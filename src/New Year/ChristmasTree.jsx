@@ -2,10 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer } from "three";
+import treeModelPath from "../assets/neon-christmas-tree.glb";
 
 // Load the 3D model and animations
 function TreeModel() {
-  const { scene, animations } = useGLTF("/src/assets/neon-christmas-tree.glb"); // Use your URL or path here
+  const { scene, animations } = useGLTF(treeModelPath);
   const mixer = useRef(null);
 
   useEffect(() => {

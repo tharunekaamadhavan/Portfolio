@@ -1,5 +1,8 @@
-import React, { Suspense, useRef } from "react";
-import "./LandingPage.css";
+import React, { useRef } from "react";
+import "./ReactLandingPage.css";
+
+import background from '/src/assets/background.jpg';
+
 const reactSvg = () => import('/src/assets/react.svg');
 const links = [
     { link: "why-react?", image: reactSvg, text: "Why React?" },
@@ -24,11 +27,14 @@ function LazyImage({ importFunction }) {
     return <img src={src} alt="Bubble" className="bubble-image" />;
 }
 
-function Landing({ onLinkClick }) {
+function ReactLanding({ onLinkClick }) {
     const bubbleRef = useRef(null);
 
     return (
-        <div className="bubble-banner-section" ref={bubbleRef}>
+        <>
+        
+        
+        <div className="bubble-banner-section" ref={bubbleRef} style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%'}}>
             <h1>Welcome to my Website!</h1>
             <h2>Start Exploring each Bubble</h2>
             <div className="bubble-container">
@@ -46,8 +52,9 @@ function Landing({ onLinkClick }) {
                 ))}
             </div>
         </div>
+        </>
     );
 }
 
 
-export default Landing;
+export default ReactLanding;
